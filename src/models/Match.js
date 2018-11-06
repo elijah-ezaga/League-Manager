@@ -4,25 +4,25 @@
  */
 export default class Match {
 
-    constructor(homeTeam, guestTeam, homeTeamScore, guestTeamScore){
+    constructor(homeTeam, guestTeam, homeTeamGoals, guestTeamGoals){
         this.homeTeam = homeTeam;
         this.guestTeam = guestTeam;
 
-        this.homeTeamScore = homeTeamScore;
-        this.guestTeamScore = guestTeamScore;
+        this.homeTeamGoals = homeTeamGoals;
+        this.guestTeamGoals = guestTeamGoals;
     }
 
     getPoints(team) {
-        if (this.homeTeamScore === this.guestTeamScore) {
+        if (this.homeTeamGoals === this.guestTeamGoals) {
             return 1;
         } 
         
         if (team.name === this.homeTeam.name) {
-            if (this.homeTeamScore > this.guestTeamScore) {
+            if (this.homeTeamGoals > this.guestTeamGoals) {
                 return 3;
             }
         } else if (team.name === this.guestTeam.name) {
-            if (this.homeTeamScore < this.guestTeamScore) {
+            if (this.homeTeamGoals < this.guestTeamGoals) {
                 return 3;
             }
         }
@@ -36,6 +36,14 @@ export default class Match {
 
     get guestTeamPoints() {
         return this.getPoints(this.guestTeam);
+    }
+
+    set homeTeamGoals(goals) {
+        this.homeTeamGoals = goals;
+    }
+
+    set guestTeamGoals(goals) {
+        this.guestTeamGoals = goals;
     }
 
 }
