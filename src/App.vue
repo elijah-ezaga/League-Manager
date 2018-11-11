@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <LeagueHome />
+    <Home />
   </div>
 </template>
 
 <script>
-import LeagueHome from './components/LeagueHome.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'app',
   components: {
-    LeagueHome
+    Home
   }
 }
 </script>
