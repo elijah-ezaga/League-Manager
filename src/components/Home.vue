@@ -12,8 +12,14 @@
         <router-link to="/teams" active-class="active" class="item">
           Teams
         </router-link>
-        <router-link to="/matches" active-class="active" class="item">
-          Matches
+        <router-link to="/matches" active-class="active">
+            <div class="ui simple dropdown item">
+              Matches
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <router-link to="/match" class="item">Add Match</router-link>
+              </div>
+            </div>
         </router-link>
       </div>
 
