@@ -5,7 +5,7 @@
 export default class Team {
 
     constructor(name) {
-        this.name = name;
+        this._name = name;
 
         /**
          * Number of points from matches
@@ -14,7 +14,11 @@ export default class Team {
     }
 
     get name() {
-        return this.name;
+        return this._name;
+    }
+
+    set name(name) {
+        this._name = name;
     }
 
     updateLeaguePoints(points) {
