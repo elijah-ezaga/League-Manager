@@ -1,4 +1,4 @@
-const Team = require('../models/Team.js');
+import Team from '../models/Team.js';
 
 /**
  * Data access object for League app
