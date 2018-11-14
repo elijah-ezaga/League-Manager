@@ -8,6 +8,7 @@
                 {{ match.guestTeam.name }} {{ match.guestTeamGoals }}
 
                 <router-link v-bind:to="'/match/' + index"><i class="edit icon"></i></router-link>
+                <button @click="removeMatch(index)"><i class="trash icon"></i></button>
             </div>
         </div>
     </div>
@@ -21,6 +22,12 @@ export default {
     data: function() {
         return {
             matches: LeagueDao.getMatches()
+        }
+    },
+
+    methods: {
+        removeMatch: function(index) {
+            LeagueDao.removeMatch(index);
         }
     }
 }

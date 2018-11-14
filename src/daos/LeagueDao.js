@@ -28,7 +28,7 @@ class LeagueDao {
     }
 
     removeMatch(index) {
-
+        this.matches.splice(index, 1);
     }
 
     getMatch(index) {
