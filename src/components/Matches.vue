@@ -1,13 +1,13 @@
 <template>
     <div>
         <h2>Played Matches</h2>
-        <div v-for="match in matches" v-bind:key="match.toString">
+        <div v-for="(match, index) in matches" v-bind:key="match.toString">
             <div>
                 {{ match.homeTeam.name }} {{ match.homeTeamGoals }}
                 - vs - 
                 {{ match.guestTeam.name }} {{ match.guestTeamGoals }}
 
-                <router-link to="/match/0">Edit</router-link>
+                <router-link v-bind:to="'/match/' + index"><i class="edit icon"></i></router-link>
             </div>
         </div>
     </div>
