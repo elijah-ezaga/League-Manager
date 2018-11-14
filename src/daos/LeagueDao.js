@@ -42,6 +42,38 @@ class LeagueDao {
     getMatches() {
         return this.matches;
     }
+
+    getLeagueTable() {
+        const table = [];
+        for (let i = 0; i < this.matches.length; ++i) {
+            let match = this.matches[i];
+
+            let homeTeam = LeagueDao.getTeamFromTable(table, match.homeTeam);
+            LeagueDao.updateTeamInfo(homeTeam, match.homeTeamPoints);
+
+            let guestTeam = LeagueDao.getTeamFromTable(table, match.guestTeam);
+            LeagueDao.updateTeamInfo(guestTeam, match.guestTeamPoints);
+        }
+
+        return table;
+    }
+
+    static updateTeamInfo(team, pointsFromMatch) {
+        team.incrementMatchesPlayed();
+        team.updateLeaguePoints(pointsFromMatch);
+    }
+
+    static getTeamFromTable(table, team) {
+        for (let i = 0; i < table.length; ++i) {
+            if (table[i].name === team.name) {
+                return table[i];
+            }
+        }
+
+        const newTeam = new Team(team.name);
+        table.push(newTeam);
+        return newTeam;
+    }
 }
 
 export default new LeagueDao();
