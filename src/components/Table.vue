@@ -2,7 +2,7 @@
     <div>
         <h2>League Table</h2>
 
-        <table>
+        <table class="ui single line table">
             <thead>
                 <tr>
                     <th>Team</th>
