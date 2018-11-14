@@ -1,4 +1,5 @@
 import Team from '../models/Team.js';
+import Match from '../models/Match.js'
 
 /**
  * Data access object for League app
@@ -23,8 +24,6 @@ class LeagueDao {
     saveMatch(index, match) {
         if (index === -1) {
             this.matches.push(match);
-        } else {
-            this.matches[index] = match;
         }
     }
 
@@ -33,6 +32,10 @@ class LeagueDao {
     }
 
     getMatch(index) {
+        if (index === -1) {
+            return new Match(new Team('team'), new Team('team'), 0, 0);
+        }
+
         return this.matches[index];
     }
 

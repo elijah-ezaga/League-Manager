@@ -6,6 +6,8 @@
                 {{ match.homeTeam.name }} {{ match.homeTeamGoals }}
                 - vs - 
                 {{ match.guestTeam.name }} {{ match.guestTeamGoals }}
+
+                <router-link to="/match/0">Edit</router-link>
             </div>
         </div>
     </div>

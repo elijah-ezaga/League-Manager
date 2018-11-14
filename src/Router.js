@@ -9,7 +9,7 @@ const routes = [
     {path: '/table', component: Table},
     {path: '/teams', component: Teams},
     {path: '/matches', component: Matches},
-    {path: '/match', component: Match}
+    {path: '/match/:id', component: Match}
 ]
 
 export default function(Vue) {

@@ -17,7 +17,7 @@
               Matches
               <i class="dropdown icon"></i>
               <div class="menu">
-                <router-link to="/match" class="item">Add Match</router-link>
+                <router-link to="/match/-1" class="item">Add Match</router-link>
               </div>
             </div>
         </router-link>

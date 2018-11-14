@@ -46,23 +46,24 @@
     
 <script>
 import LeagueDao from '../daos/LeagueDao.js'
-import Match from '../models/Match.js'
-import Team from '../models/Team.js'
-
-const DEFAULT_TEAM = new Team('team');
 
 export default {
     data: function() {
         return {
-            match: new Match(DEFAULT_TEAM, DEFAULT_TEAM, 0, 0),
+            match: LeagueDao.getMatch(this.getMatchIdAsInt()),
             teams: LeagueDao.getTeams()
         }
     },
 
     methods: {
         saveMatch: function() {
-            LeagueDao.saveMatch(-1, this.match);
-            this.$router.push('matches');
+            LeagueDao.saveMatch(this.getMatchIdAsInt(), this.match);
+
+            this.$router.push('/matches');
+        },
+
+        getMatchIdAsInt: function() {
+            return parseInt(this.$route.params['id']);
         }
     }
 }
