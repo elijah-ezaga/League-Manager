@@ -49,7 +49,6 @@ import LeagueDao from '../daos/LeagueDao.js'
 import Match from '../models/Match.js'
 import Team from '../models/Team.js'
 
-//const leagueDao = new LeagueDao();
 const DEFAULT_TEAM = new Team('team');
 
 export default {
