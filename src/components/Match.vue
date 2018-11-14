@@ -63,6 +63,7 @@ export default {
     methods: {
         saveMatch: function() {
             LeagueDao.saveMatch(-1, this.match);
+            this.$router.push('matches');
         }
     }
 }
