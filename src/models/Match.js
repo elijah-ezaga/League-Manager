@@ -70,4 +70,7 @@ export default class Match {
         this._guestTeamGoals = goals;
     }
 
+    get toString() {
+        return this._homeTeam.name + this._guestTeam.name + this._homeTeamGoals + this._guestTeamGoals;
+    }
 }

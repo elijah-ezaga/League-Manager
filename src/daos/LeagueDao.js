@@ -3,7 +3,7 @@ import Team from '../models/Team.js';
 /**
  * Data access object for League app
  */
-export default class LeagueDao {
+class LeagueDao {
 
     constructor() {
         /**
@@ -40,3 +40,5 @@ export default class LeagueDao {
         return this.matches;
     }
 }
+
+export default new LeagueDao();

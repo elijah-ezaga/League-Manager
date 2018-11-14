@@ -49,23 +49,20 @@ import LeagueDao from '../daos/LeagueDao.js'
 import Match from '../models/Match.js'
 import Team from '../models/Team.js'
 
-const leagueDao = new LeagueDao();
+//const leagueDao = new LeagueDao();
 const DEFAULT_TEAM = new Team('team');
 
 export default {
     data: function() {
         return {
             match: new Match(DEFAULT_TEAM, DEFAULT_TEAM, 0, 0),
-            teams: leagueDao.getTeams()
+            teams: LeagueDao.getTeams()
         }
     },
 
     methods: {
         saveMatch: function() {
-            leagueDao.saveMatch(-1, this.match);
-            let m = leagueDao.getMatches();
-            console.log(m[0].homeTeam.name);
-            console.log(m[0].homeTeamGoals);
+            LeagueDao.saveMatch(-1, this.match);
         }
     }
 }
