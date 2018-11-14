@@ -55,6 +55,10 @@ class LeagueDao {
             LeagueDao.updateTeamInfo(guestTeam, match.guestTeamPoints);
         }
 
+        table.sort(function(team1, team2) {
+            return team2.leaguePoints - team1.leaguePoints;
+        });
+
         return table;
     }
 
