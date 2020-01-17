@@ -1,5 +1,6 @@
 # league-app
-Collects scores of matches between teams in a league.
+Ever wondered how a football league system manages matches?
+This app tries demonstrates how it works!
 
 ## Project setup
 ```
